@@ -73,6 +73,10 @@ img {
   letter-spacing: 0.02em;
   color: var(--secondary-title-color);
   padding: 32px 0px;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-nav-item:not(:last-child) {
@@ -112,6 +116,10 @@ img {
 .header-icon {
   fill: currentColor;
   margin-right: 10px;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address {
@@ -132,15 +140,17 @@ img {
   letter-spacing: 0.02em;
   color: var(--main-text-color);
   text-decoration: none;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Accent */
 .header-icon:focus,
 .header-icon:hover,
 .header-nav-link:hover,
-.address-link:hover {
-  color: var(--accent-color);
-}
+.address-link:hover,
 .header-nav-link:focus,
 .address-link:focus {
   color: var(--accent-color);
@@ -358,6 +368,10 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* Clients section*/
 .clients {
@@ -405,6 +419,11 @@ img {
 
   border: solid 1px #afb1b8;
   border-radius: 4px;
+
+  transition-property: fill, border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 }
 
 /* Button-filter-portfolio */
@@ -413,12 +432,15 @@ img {
   display: flex;
   margin-bottom: 50px;
   justify-content: center;
+
+  
 }
 
 .filter-item:not(:last-child) {
   margin-right: 8px;
 }
 .button-filter {
+  display: flex;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
@@ -430,8 +452,13 @@ img {
   padding: 6px 22px;
   border-radius: 4px;
   border: 1px solid transparent;
+
+  transition-property: color, background-color, box-shadow, border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.all {
+}
+.filter-item > .all {
   min-width: 73px;
 }
 .web-sites {
@@ -497,6 +524,10 @@ img {
 }
 .gallery-card {
   display: block;
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 }
 .gallery-card:focus,
 .gallery-card:hover {
@@ -594,7 +625,12 @@ address {
   border-radius: 50%;
   justify-content: center;
   align-items: center;
-  color: #ffffff;
+  fill: #ffffff;
+
+  transition-property: fill, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 }
 .footer-icon {
   fill: #ffffff;
@@ -605,5 +641,5 @@ address {
 .footer-link:hover,
 .footer-link:focus {
   background-color: var(--accent-color);
-  color: #ffffff;
+  fill: #ffffff;
 }
