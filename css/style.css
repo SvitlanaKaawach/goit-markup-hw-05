@@ -74,9 +74,25 @@ img {
   color: var(--secondary-title-color);
   padding: 32px 0px;
 
-  transition-property: color;
-  transition-duration: 250ms;
+  transition-property: color, opacity;
+  transition-delay: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  position: relative;
+}
+
+.header-nav-link.current::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  opacity: 1;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent-color);
 }
 
 .header-nav-item:not(:last-child) {
@@ -118,7 +134,7 @@ img {
   margin-right: 10px;
 
   transition-property: color;
-  transition-duration: 250ms;
+  transition-delay: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -142,7 +158,7 @@ img {
   text-decoration: none;
 
   transition-property: color;
-  transition-duration: 250ms;
+  transition-delay: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -150,7 +166,9 @@ img {
 .header-icon:focus,
 .header-icon:hover,
 .header-nav-link:hover,
-.address-link:hover,
+.address-link:hover {
+  color: var(--accent-color);
+}
 .header-nav-link:focus,
 .address-link:focus {
   color: var(--accent-color);
@@ -276,6 +294,33 @@ img {
 .image-of-studio-duty:not(:last-child) {
   margin-right: 30px;
 }
+.image-of-studio-duty {
+  position: relative;
+}
+.works-title-container {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+
+  height: 70px;
+  width: 100%;
+  background-color: #2f303a;
+  opacity: 0.8;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.works-list-title {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.71;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 27px 0;
+
+  color: #ffffff;
+}
 
 /* Team-card */
 .team-card-content {
@@ -312,8 +357,8 @@ img {
 
   box-shadow: 0px 2px 1px 0px #00000033, 0px 1px 1px 0px #00000024,
     0px 1px 3px 0px #0000001f;
-  border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 0px 0px 4px 4px;
 }
 
 /* Team members */
@@ -370,7 +415,7 @@ img {
   justify-content: center;
 
   transition-property: color, background-color;
-  transition-duration: 250ms;
+  transition-delay: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* Clients section*/
@@ -397,14 +442,6 @@ img {
   align-items: center;
   padding: 16px 32px;
 }
-.clients-link:hover .client-icon,
-.clients-link:focus .client-icon {
-  fill: var(--accent-color);
-}
-.clients-link:hover,
-.clients-link:focus {
-  border-color: var(--accent-color);
-}
 
 .clients-item {
   width: 170px;
@@ -420,27 +457,31 @@ img {
   border: solid 1px #afb1b8;
   border-radius: 4px;
 
-  transition-property: fill, border-color;
-  transition-duration: 250ms;
+  transition-property: border-color, fill;
+  transition-delay: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-}
 
+.clients-link:hover .client-icon,
+.clients-link:focus .client-icon {
+  fill: var(--accent-color);
+}
+.clients-link:hover,
+.clients-link:focus {
+  border-color: var(--accent-color);
+}
 /* Button-filter-portfolio */
 
 .filter {
   display: flex;
   margin-bottom: 50px;
   justify-content: center;
-
-  
 }
 
 .filter-item:not(:last-child) {
   margin-right: 8px;
 }
 .button-filter {
-  display: flex;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
@@ -453,12 +494,11 @@ img {
   border-radius: 4px;
   border: 1px solid transparent;
 
-  transition-property: color, background-color, box-shadow, border;
-  transition-duration: 250ms;
+  transition-property: background-color, color, box-shadow;
+  transition-delay: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-}
-.filter-item > .all {
+.all {
   min-width: 73px;
 }
 .web-sites {
@@ -478,13 +518,17 @@ img {
   background-color: var(--accent-color);
   color: var(--main-title-color);
   box-shadow: 0px 4px 4px 0px #00000040;
-  border: 1px solid #000000;
+  box-shadow: 0px 2px 2px 0px #0000001f;
+  box-shadow: 0px 1px 2px 0px #00000014;
+  box-shadow: 0px 3px 1px 0px #0000001a;
 }
 .button-filter:focus {
   background-color: var(--accent-color);
   color: var(--main-title-color);
   box-shadow: 0px 4px 4px 0px #00000040;
-  border: 1px solid #000000;
+  box-shadow: 0px 2px 2px 0px #0000001f;
+  box-shadow: 0px 1px 2px 0px #00000014;
+  box-shadow: 0px 3px 1px 0px #0000001a;
 }
 
 /* Gallery-portfolio */
@@ -524,14 +568,41 @@ img {
 }
 .gallery-card {
   display: block;
-  transition-property: box-shadow;
-  transition-duration: 250ms;
+}
+
+.card {
+  position: relative;
+  transition-property: transform, content, backround, opacity, box-shadov;
+  transition-delay: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-}
-.gallery-card:focus,
-.gallery-card:hover {
+.card:hover,
+.card:focus {
   box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.card::before {
+  content: "Технокряк это современная площадка распространения коронавируса. Компании используют эту платформу для цифрового шпионажа и атак на защищённые сервера конкурентов.";
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+
+  padding: 63px 24px;
+
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 294px;
+  background: rgba(33, 150, 243, 0.9);
+  opacity: 0.9;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card:hover .card::before {
+  transform: translateY(0);
 }
 
 /* Card-content */
@@ -625,12 +696,11 @@ address {
   border-radius: 50%;
   justify-content: center;
   align-items: center;
-  fill: #ffffff;
+  color: #ffffff;
 
-  transition-property: fill, background-color;
-  transition-duration: 250ms;
+  transition-property: background-color, color;
+  transition-delay: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
 }
 .footer-icon {
   fill: #ffffff;
@@ -641,5 +711,5 @@ address {
 .footer-link:hover,
 .footer-link:focus {
   background-color: var(--accent-color);
-  fill: #ffffff;
+  color: #ffffff;
 }
